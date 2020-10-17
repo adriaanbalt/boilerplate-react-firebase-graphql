@@ -1,0 +1,46 @@
+@import "globalStyles/variables.scss";
+
+.listItem {
+	position: relative;
+	width: $size-list-item;
+	margin: 1%;
+	text-align: center;
+	.listItemLink {
+		display: inline;
+	}
+	img {
+		width: 100%;
+		display: block;
+		transition: all 0.8s;
+	}
+	h3 {
+		margin: 0.5em 0;
+	}
+	.overlay {
+		position: absolute;
+		transition: all 500ms;
+		opacity: 0;
+		background: rgba($color-list-item-bg-hover, 1);
+		bottom: 0;
+		margin-left: 0%;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+		p {
+			color: $color-font-light;
+		}
+	}
+	&:hover {
+		.overlay {
+			opacity: 1;
+		}
+		// background: $color-list-item-bg-hover;
+		img {
+			// transform: scale(1.05)
+		}
+	}
+}

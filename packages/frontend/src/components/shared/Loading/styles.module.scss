@@ -1,0 +1,13 @@
+@import "globalStyles/variables.scss";
+.loaderContainer {
+	// display: flex;
+	align-content: center;
+	justify-content: space-around;
+	// margin: 2em;
+}
+
+.loader {
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+}

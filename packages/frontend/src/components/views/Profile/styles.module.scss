@@ -1,0 +1,14 @@
+@import "globalStyles/variables.scss";
+
+.ViewProfile {
+	h1 {
+		margin-bottom: 1em;
+	}
+	label {
+		display: block;
+		margin-bottom: 0.5em;
+	}
+	.logoutBtn {
+		margin-top: 2rem;
+	}
+}

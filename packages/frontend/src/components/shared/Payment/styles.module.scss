@@ -1,0 +1,28 @@
+.PurchaseDetails {
+  form {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5em;
+  }
+  label {
+    flex: 1;
+    margin: 0.25em;
+    span {
+      display: inline-block;
+      width: 100px;
+    }
+  }
+  input[type="text"] {
+    margin: 0 1em;
+  }
+  input[type="file"],
+  input[type="submit"] {
+    margin-top: 2em;
+  }
+  .columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

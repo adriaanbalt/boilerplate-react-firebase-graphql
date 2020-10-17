@@ -1,0 +1,15 @@
+@import "globalStyles/variables.scss";
+.button {
+    display: inline-block;
+    margin: 1em 0;
+    border-bottom: 3px solid $color-light;
+    > * { 
+        display: inline;
+        &:first-child{
+            margin-right: 1rem;
+        }
+    }
+	&:hover {
+		border-bottom: 3px solid $color-button-border;
+	}
+}

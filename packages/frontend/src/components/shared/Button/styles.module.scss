@@ -1,0 +1,26 @@
+@import "globalStyles/variables.scss";
+.button {
+    position: relative;
+	display: inline-block;
+    border-bottom: $button-border-width solid $color-button-border;
+    padding: 1rem 3rem;
+    background-color: $color-button-bg;
+    cursor: pointer;
+	&:hover {
+        // background-color: $color-button-bg-hover;
+        border-color: $color-gray;
+    }
+    .left {
+        left: -$button-border-width;
+    }
+    .right {
+        right: -$button-border-width;
+    }
+    .side {
+        width: $button-border-width;
+        height: 10px;
+        background-color: $color-site-bg;
+        position: absolute;
+        top: calc(50% - #{$button-border-width});
+    }
+}

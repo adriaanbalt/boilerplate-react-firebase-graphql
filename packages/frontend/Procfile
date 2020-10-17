@@ -1,0 +1,1 @@
+web: node ./packages/frontend/server/index.js

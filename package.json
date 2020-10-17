@@ -1,0 +1,42 @@
+{
+	"name": "rfg",
+	"description": "mono repo including both frontend and backend",
+	"author": "ADRIAAN BALT",
+	"license": "MIT",
+	"private": true,
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		]
+	},
+	"cacheDirectories": [
+		"node_modules",
+		"packages/frontend/node_modules",
+		"packages/backend/node_modules"
+	],
+	"engines": {
+		"node": "10.18.1"
+	},
+	"scripts": {
+		"backend-install": "cd packages/backend && yarn",
+		"frontend-install": "cd packages/frontend && yarn",
+		"install": "run-p frontend-install backend-install",
+		"heroku-postbuild": "bash ./scripts/heroku.build",
+		"frontend-start": "cd packages/frontend && yarn start",
+		"backend-start": "cd packages/backend/src && firebase use boiler-react-firebase-graphql && firebase serve",
+		"frontend-build": "cd packages/frontend && yarn run build",
+		"backend-build": "cd packages/backend && yarn run build",
+		"local-build": "run-p frontend-build backend-build",
+		"local-dev": "run-p backend-start frontend-start",
+		"backend-deploy": "cd packages/backend && yarn deploy",
+		"frontend-deploy": "git push origin master",
+		"deploy": "run-p frontend-deploy backend-deploy"
+	},
+	"devDependencies": {
+		"npm-run-all": "^4.1.5"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/adriaanbalt/boilerplate-react-firebase-graphql.git"
+	}
+}

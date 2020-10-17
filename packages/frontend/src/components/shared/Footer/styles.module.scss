@@ -1,0 +1,54 @@
+@import "globalStyles/variables.scss";
+.footer {
+    width: 100%;
+    height: $footer-height;
+    margin-top: 5em;
+	z-index: 1000;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $color-footer-bg;
+    color: $color-font-light;
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .mailing {
+        padding: 8em 4em;
+        input[type=text] {
+            width: 100%;
+            padding: 10px 0;
+            box-sizing: border-box;
+            color: $color-font-light;
+            font-size: $input-font-size-big;
+            background: transparent;
+            outline: 0;
+            border: 0;
+            border-bottom: 1px solid $color-font-light;
+        }
+    }
+	p {
+		color: $color-font-light;
+    }
+    .left, .right {
+        display: flex;
+        flex-direction: row;
+        padding: 0 4em;
+        align-items: center;
+    }
+	.navContainer {
+		flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1em;
+        margin-left: 2em;
+		> a {
+			padding: 1em;
+			display: inline-block;
+			font-size: 10px;
+			color: $color-font-nav-inactive;
+			&.isActive {
+				color: $color-font-nav-active;
+			}
+		}
+	}
+}

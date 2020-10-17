@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "boilerplate-react-firebase-graphql-app",
+    "production": "boilerplate-react-firebase-graphql-app"
+  }
+}

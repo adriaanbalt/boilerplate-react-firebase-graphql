@@ -1,0 +1,7 @@
+@import "./variables.scss";
+
+header, footer {
+  @media print {
+    display: none;
+  }
+}

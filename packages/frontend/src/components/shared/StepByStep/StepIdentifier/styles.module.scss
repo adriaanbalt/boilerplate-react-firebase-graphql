@@ -1,0 +1,17 @@
+@import "globalStyles/variables.scss";
+.step {
+    width: 20px;
+    height: 20px;
+    border-bottom: $button-border-width solid $color-ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    &:last-child {
+        margin-right: 0;
+    }
+    > * {
+        color: $color-ccc;
+    }
+}

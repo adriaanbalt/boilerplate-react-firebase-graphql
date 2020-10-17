@@ -1,0 +1,19 @@
+@import "globalStyles/variables.scss";
+
+.container {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -20px; /* gutter size offset */
+  width: auto;
+}
+
+.item {
+    padding-left: 20px; /* gutter size */
+    background-clip: padding-box;
+	position: relative;
+	width: $size-list-item;
+    > div { /* change div to reference your elements you put in <Masonry> */
+        margin-bottom: 20px;
+    }
+}

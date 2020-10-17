@@ -1,0 +1,17 @@
+@import "globalStyles/variables.scss";
+.Sell {
+  .breadcrumbs {
+    display: flex;
+    flex-direction: row;
+  }
+  .questions {
+    margin-top: 2rem;
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    > * {
+      margin: 0 1rem;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "globalStyles/variables.scss";
+.modal {
+	position: fixed;
+	z-index: 10000000;
+	width: 100vw;
+	height: 100vh;
+}
+.background {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+}
+.content {
+	width: 70%;
+	background: #fff;
+	height: 70%;
+	position: absolute;
+	transform: translate(20%, 15%);
+	z-index: 1;
+	box-shadow: 0px 0px 15px 0px #000;
+}
+.inner {
+	padding: 5%;
+}

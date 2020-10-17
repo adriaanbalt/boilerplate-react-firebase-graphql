@@ -1,0 +1,6 @@
+@import "./variables.scss";
+
+@mixin screen-transition {
+  transition: opacity $routeTransitionDuration $route-cubic-bezier;
+  will-change: transition, opacity;
+}

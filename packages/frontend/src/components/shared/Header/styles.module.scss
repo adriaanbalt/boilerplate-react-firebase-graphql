@@ -1,0 +1,72 @@
+@import "globalStyles/variables.scss";
+.header {
+	width: 100%;
+	z-index: 1000;
+	color: $color-font-nav-active;
+	height: 20%;
+	padding: 5em 0 4em 0;
+	.inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 0 $edge-padding;
+	}
+	.logoLink {
+		display: inline-block;
+		width: 100%;
+		img {
+			width: 100%;
+			max-width: 440px;
+		}
+    }
+	.mainNavButtonsContainer {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+    }
+    .mainNavButtonsContainerInner {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+		> a {
+			padding: 0.25em;
+			display: block;
+			color: $color-font-nav-inactive;
+			&:first-child, &:last-child {
+				margin-left: 0;
+			}
+			&.isActive {
+				color: $color-font-nav-active;
+			}
+			&.isInverted {
+				color: $color-light;
+			}
+		}
+    }
+
+	// Mediaqueries
+	@media (min-width: $mobileWidth) {
+		.logoLink {
+			width: 25%;
+		}
+		.inner {
+			flex-direction: row;
+            justify-content: space-between;
+		}
+		.navContainer{
+			width: 60%;
+		}
+		.mainNavButtonsContainer {
+			flex-direction: row;
+			justify-content: space-around;
+            justify-content: flex-end;
+            height: 100%;
+		}
+        .mainNavButtonsContainerInner {
+			> a {
+				display: inline-block;
+            }
+        }
+	}
+}

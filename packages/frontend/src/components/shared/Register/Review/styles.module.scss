@@ -1,0 +1,8 @@
+@import "globalStyles/variables.scss";
+.buttons {
+  display: flex;
+  justify-content: center;
+  > * {
+    margin: 0 1rem;
+  }
+}
