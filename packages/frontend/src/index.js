@@ -1,19 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { ApolloProvider } from "react-apollo";
 import { ApolloClient } from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { createUploadLink } from "apollo-upload-client";
-import { Provider } from "react-redux";
-import store, { history } from "./Store";
-import { ConnectedRouter } from "react-router-redux";
-import App from "./App";
-import registerServiceWorker from "./lib/serviceWorker";
-import "./index.scss";
-import { GRAPHQL_URL } from "./constants/graphql";
-import StripeConfig from "./constants/stripe";
+import { UseWalletProvider } from "use-wallet";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import bugsnag from "@bugsnag/expo";
+import registerServiceWorker from "./lib/serviceWorker";
+import { GRAPHQL_URL } from "./constants/graphql";
+import StripeConfig from "./constants/stripe";
+import { CollectionsProvider } from "./contexts/CollectionsContext";
+import Navigator from "./navigator";
+import "./index.scss";
 
 const uploadLink = createUploadLink({
 	uri: GRAPHQL_URL, // Apollo Server is served from port 4000
@@ -30,17 +29,35 @@ const client = new ApolloClient({
 });
 
 const stripePromise = loadStripe(StripeConfig.apiKey);
+const bugsnagClient = bugsnag();
+const ErrorBoundary = bugsnagClient.getPlugin("react");
 
-ReactDOM.render(
-	<ApolloProvider client={client}>
-		<Provider store={store}>
-			<ConnectedRouter history={history}>
-				<Elements stripe={stripePromise}>
-					<App />
-				</Elements>
-			</ConnectedRouter>
-		</Provider>
-	</ApolloProvider>,
-	document.getElementById("root"),
-);
+// used by the web implementation only (should gate around this)
 registerServiceWorker();
+
+const Main = () => {
+	return (
+		<ApolloProvider client={client}>
+			<UseWalletProvider chainId={1}>
+				<Elements stripe={stripePromise}>
+					<CollectionsProvider>
+						<App />
+					</CollectionsProvider>
+				</Elements>
+			</UseWalletProvider>
+		</ApolloProvider>
+	);
+};
+
+const ErrorFallback = (props) => {
+	return <View>Error Fallback!</View>;
+};
+export default class AppContainer extends React.Component {
+	render() {
+		return (
+			<ErrorBoundary FallbackComponent={ErrorFallback}>
+				<Main />
+			</ErrorBoundary>
+		);
+	}
+}
