@@ -9,17 +9,14 @@ const { add, multiply } = Animated;
  */
 const cardStyleInterpolator = (params) => {
 	const {
-		index,
 		current,
 		next,
 		inverted,
 		layouts: { screen },
-		insets,
 	} = params;
 	const modalHeight = screen.height;
 	const isLandscape = screen.width > modalHeight;
 	const topOffset = 0;
-	const statusBarHeight = insets.top;
 	const aspectRatio = modalHeight / screen.width;
 
 	const progress = add(

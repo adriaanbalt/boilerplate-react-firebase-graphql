@@ -1,11 +1,5 @@
 import React from "react";
-import {
-	ApolloProvider,
-	ApolloClient,
-	InMemoryCache,
-	HttpLink,
-} from "@apollo/client";
-import { UseWalletProvider } from "use-wallet";
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
@@ -41,13 +35,12 @@ registerServiceWorker();
 const Main = () => {
 	return (
 		<ApolloProvider client={client}>
-			<UseWalletProvider chainId={1}>
-				<Elements stripe={stripePromise}>
-					<ProductsProvider>
-						<App />
-					</ProductsProvider>
-				</Elements>
-			</UseWalletProvider>
+			<Elements stripe={stripePromise}>
+				<ProductsProvider>
+					<div>hi</div>
+					<App />
+				</ProductsProvider>
+			</Elements>
 		</ApolloProvider>
 	);
 };

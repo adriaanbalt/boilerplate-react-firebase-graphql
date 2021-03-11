@@ -38,5 +38,9 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/adriaanbalt/boilerplate-react-firebase-graphql.git"
+	},
+	"dependencies": {
+		"react-native-screens": "^2.18.1",
+		"use-wallet": "^0.8.1"
 	}
 }
