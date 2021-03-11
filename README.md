@@ -1,17 +1,17 @@
 # React, Apollo GraphQL, and Firebase for auth, storage, analytics.
 
-This boilerplate is the foundation for a marketplace application.  Users can create accounts, add products they own to their collection.
+This boilerplate is the foundation for a marketplace application. Users can create accounts, add products they own to their collection.
 
 ## Technical Structure
 
-- React + Redux to manager UI state
-- Firebase cloud function hosts GraphQL server
-- Apollo is integrated into React
-- Heroku hosts the frontend & backend
-- Firebase Firestore hosts the database
-- Firebase Auth handles authentication
-- Yarn workspaces divides the app between frontend and backend to help manage dependencies
-- Lunr Search
+-   React + Redux to manager UI state
+-   Firebase cloud function hosts GraphQL server
+-   Apollo is integrated into React
+-   Heroku hosts the frontend & backend
+-   Firebase Firestore hosts the database
+-   Firebase Auth handles authentication
+-   Yarn workspaces divides the app between frontend and backend to help manage dependencies
+-   Lunr Search
 
 ## ToDo
 
@@ -21,21 +21,21 @@ This boilerplate is the foundation for a marketplace application.  Users can cre
 
 ## Dependencies
 
-- NODE 10.18.1 because (at the time) this was the maximum node version allowed by Google Cloud Platform.
+-   NODE 10.18.1 because (at the time) this was the maximum node version allowed by Google Cloud Platform.
 
 ## Installation steps
 
-1.   Install [VS Code IDE](https://code.visualstudio.com) (optional, you can use an IDE of choice but we used VSCode while building this app)
-2.   Install [iTerm2](https://www.iterm2.com) (optional, convenient way to style your terminal)
-3.   Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) (optional, lets you easily style your terminal)
-4.   Install [Homebrew](https://brew.sh)
-5.   Install [NVM](https://github.com/nvm-sh/nvm)
+1.  Install [VS Code IDE](https://code.visualstudio.com) (optional, you can use an IDE of choice but we used VSCode while building this app)
+2.  Install [iTerm2](https://www.iterm2.com) (optional, convenient way to style your terminal)
+3.  Install [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH) (optional, lets you easily style your terminal)
+4.  Install [Homebrew](https://brew.sh)
+5.  Install [NVM](https://github.com/nvm-sh/nvm)
 
 ```
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
 
-6.   Install NVM continued: Update `~/.zshrc` (this may happen automatically)
+6.  Install NVM continued: Update `~/.zshrc` (this may happen automatically)
 
 ```
 export NVM_DIR="$HOME/.nvm"
@@ -43,20 +43,20 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 ```
 
-7.   Install NODE using NVM
+7.  Install NODE using NVM
 
 ```
 $ nvm install 10.18.1
 $ nvm use 10.18.1
 ```
 
-8.   Install [Yarn](https://yarnpkg.com/lang/en/) using Homebrew `$ brew install yarn`
-9.   Install [Firebase CLI](https://firebase.google.com/docs/cli) `$ npm install firebase -g` `$ npm install -g firebase-tools`
-10.  Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) using Homebrew `$ brew tap heroku/brew && brew install heroku`
-11.  Install [Apollo CLI](https://www.npmjs.com/package/apollo) `$ yarn global add apollo`
-12.  Install [VS Code Apollo](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
-13.  Clone the repo `$ git clone git@github.com/adriaanbalt/boilerplate-react-firebase-graphql.git`
-14.  Install dependencies from the app directory (boilerplate-react-firebase-graphql/app) `yarn run install`
+8.  Install [Yarn](https://yarnpkg.com/lang/en/) using Homebrew `$ brew install yarn`
+9.  Install [Firebase CLI](https://firebase.google.com/docs/cli) `$ npm install firebase -g` `$ npm install -g firebase-tools`
+10. Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) using Homebrew `$ brew tap heroku/brew && brew install heroku`
+11. Install [Apollo CLI](https://www.npmjs.com/package/apollo) `$ yarn global add apollo`
+12. Install [VS Code Apollo](https://marketplace.visualstudio.com/items?itemName=apollographql.vscode-apollo)
+13. Clone the repo `$ git clone git@github.com/adriaanbalt/boilerplate-react-firebase-graphql.git`
+14. Install dependencies from the app directory (boilerplate-react-firebase-graphql/app) `yarn run install`
 
 ## Local Development
 
@@ -66,11 +66,11 @@ $ nvm use 10.18.1
 4. In one terminal window, start the local frontend development server `$ yarn run frontend-start`
 5. Open browser to [http://localhost:3000](http://localhost:3000) (this will happen automatically)
 6. API GraphQL "emulator" server will be hosted at [http://localhost:5000](http://localhost:5000)
-Note: Local development is connected to production database and storage on Firebase! (add item local, item is also in prod)
+   Note: Local development is connected to production database and storage on Firebase! (add item local, item is also in prod)
 
 ## Deployment
 
-To update the production app both the frontend and backend must be  on the server.  To make this easy, there is one terminal command that updates both:
+To update the production app both the frontend and backend must be on the server. To make this easy, there is one terminal command that updates both:
 `$ yarn deploy`
 
 #### What is this doing under the hood?
@@ -86,7 +86,6 @@ $ git push origin master
 2. Check that the environments are building
    [Frontend Activity Monitor](https://dashboard.heroku.com/apps/boilerplate-react-firebase-graphql-frontend/activity)
    [Frontend Activity Monitor](https://dashboard.heroku.com/apps/boilerplate-react-firebase-graphql-backend/activity)
-  
 
 3. Deploy the GraphQL Mutation and Query node js files
 
@@ -474,3 +473,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 -   There is a warning from router but the creators of React Router haven't fixed it yet, not sure why that is the case. [See more here](https://github.com/ReactTraining/react-router/issues/6382)
 
+https://www.apollographql.com/blog/graphql-file-uploads-with-react-hooks-typescript-amazon-s3-tutorial-ef39d21066a2/
+https://dev.to/rajvirtual/an-intro-to-apollo-graphql-with-react-hooks-and-context-api-1gb3

@@ -5,7 +5,7 @@ import Modal from "components/shared/Modal";
 import Footer from "components/shared/Footer";
 import AppNavigator from "navigator";
 
-export default App = () => {
+export default () => {
 	return (
 		<React.Fragment>
 			<Modal />

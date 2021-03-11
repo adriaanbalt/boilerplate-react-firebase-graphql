@@ -4,25 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import PAGE_TRANSITIONS from "../utils/PAGE_TRANSITIONS";
-import Variables from "../constants/Variables";
+import HomeScreen from "../components/views/Home";
+import ProfileScreen from "../components/views/Profile";
+// import ProductDetailsScreen from "../components/views/ProductDetailsScreen";
 
-import AuthLoadingScreen from "../screens/Auth/AuthLoadingScreen";
-import Onboarding from "../screens/Onboarding";
-import HomeScreen from "../screens/Home";
-import ProfileScreen from "../screens/Profile";
-// import ProductDetailsScreen from "../screens/ProductDetailsScreen";
-import SearchScreen from "../screens/Search";
-
-import ModalFriend from "../modals/ModalFriend";
-import ModalSettings from "../modals/ModalSettings";
-import ModalLoginPhone from "../modals/ModalLoginPhone";
-import ModalProfileEdit from "../modals/ModalProfileEdit";
-import ModalAddMovie from "../modals/ModalAddMovie";
-
-import HomeNavButton from "./HomeNavButton";
-import SearchNavButton from "./SearchNavButton";
-import ProfileNavButton from "./ProfileNavButton";
+import PAGE_TRANSITIONS from "lib/PAGE_TRANSITIONS";
 
 const MyTheme = {
 	dark: false,
@@ -68,28 +54,6 @@ function ProfileStack() {
 		</Stack.Navigator>
 	);
 }
-function SearchStack() {
-	const Stack = createStackNavigator();
-	return (
-		<Stack.Navigator initialRouteName='SearchScreen' mode='modal'>
-			<Stack.Screen
-				name='SearchScreen'
-				component={SearchScreen}
-				options={{
-					headerShown: false,
-				}}
-			/>
-			<Stack.Screen
-				name='SearchResults'
-				component={SearchResults}
-				options={{
-					headerShown: false,
-					...PAGE_TRANSITIONS.HORIZONTAL_IN_SCALE_LAST,
-				}}
-			/>
-		</Stack.Navigator>
-	);
-}
 function Tabs() {
 	const Tab = createBottomTabNavigator();
 	return (
@@ -97,8 +61,8 @@ function Tabs() {
 			initialRouteName='Home'
 			tabBarOptions={{
 				showLabel: false,
-				activeTintColor: Variables.activeTabColor,
-				inactiveTintColor: Variables.inactiveTabColor,
+				activeTintColor: "#FFF",
+				inactiveTintColor: "#EEE",
 				style: {
 					bottom: 30,
 					justifyContent: "center",
@@ -108,43 +72,10 @@ function Tabs() {
 					borderRadius: 20,
 					position: "absolute",
 					borderTopColor: "transparent",
-					backgroundColor: Variables.backgroundColorTransparent,
-					shadowOffset: { width: 0, height: 0 },
-					shadowColor: Variables.shadowColor,
-					shadowOpacity: 0.75,
-					shadowRadius: 5,
+					backgroundColor: "#111",
 				},
-			}}
-			screenOptions={({ route }) => ({
-				tabBarIcon: ({ focused, color }) => {
-					if (route.name === "Profile") {
-						return (
-							<ProfileNavButton
-								tintColor={color}
-								focused={focused}
-							/>
-						);
-					}
-					if (route.name === "Home") {
-						return (
-							<HomeNavButton
-								tintColor={color}
-								focused={focused}
-							/>
-						);
-					}
-					if (route.name === "Search") {
-						return (
-							<SearchNavButton
-								tintColor={color}
-								focused={focused}
-							/>
-						);
-					}
-				},
-			})}>
+			}}>
 			<Tab.Screen name='Home' component={HomeStack} />
-			<Tab.Screen name='Search' component={SearchStack} />
 			<Tab.Screen
 				name='Profile'
 				component={ProfileStack}
@@ -173,26 +104,9 @@ function App() {
 					headerShown: false,
 				}}
 			/>
-			<Stack.Screen
-				name='MovieDetailsScreen'
-				component={MovieDetailsScreen}
-				options={({ route: { params } }) => {
-					const verticalHitArea =
-						params && params.isDrawerOpen
-							? 100
-							: Variables.videoplayerHeight;
-					return {
-						headerShown: false,
-						gestureResponseDistance: {
-							vertical: verticalHitArea,
-						},
-						...PAGE_TRANSITIONS.MODAL,
-					};
-				}}
-			/>
-			<Stack.Screen
-				name='ModalFriend'
-				component={ModalFriend}
+			{/* <Stack.Screen
+				name='ProductDetailsScreen'
+				component={ProductDetailsScreen}
 				options={{
 					headerShown: false,
 					gestureResponseDistance: {
@@ -200,50 +114,7 @@ function App() {
 					},
 					...PAGE_TRANSITIONS.MODAL,
 				}}
-			/>
-			<Stack.Screen
-				name='ModalAddMovie'
-				component={ModalAddMovie}
-				options={{
-					headerShown: false,
-					gestureResponseDistance: {
-						vertical: 600,
-					},
-				}}
-			/>
-			<Stack.Screen
-				name='ProfileModalSettings'
-				component={ModalSettings}
-				options={{
-					headerShown: false,
-					gestureResponseDistance: {
-						vertical: 600,
-					},
-					...PAGE_TRANSITIONS.MODAL,
-				}}
-			/>
-			<Stack.Screen
-				name='ModalLoginPhone'
-				component={ModalLoginPhone}
-				options={{
-					headerShown: false,
-					gestureResponseDistance: {
-						vertical: 600,
-					},
-					...PAGE_TRANSITIONS.MODAL,
-				}}
-			/>
-			<Stack.Screen
-				name='ModalProfileEdit'
-				component={ModalProfileEdit}
-				options={{
-					headerShown: false,
-					gestureResponseDistance: {
-						vertical: 600,
-					},
-					...PAGE_TRANSITIONS.MODAL,
-				}}
-			/>
+			/> */}
 		</Stack.Navigator>
 	);
 }
@@ -261,31 +132,13 @@ export default function AppNavigator() {
 				// }
 			}}>
 			<Stack.Navigator
-				initialRouteName='AuthLoadingScreen'
+				initialRouteName='App'
 				screenOptions={{
 					headerStyle: { elevation: 0 },
 				}}>
 				<Stack.Screen
-					name='AuthLoadingScreen'
-					component={AuthLoadingScreen}
-					options={{
-						headerShown: false,
-						gestureEnabled: false,
-						...PAGE_TRANSITIONS.FADE_IN,
-					}}
-				/>
-				<Stack.Screen
 					name='App'
 					component={App}
-					options={{
-						headerShown: false,
-						gestureEnabled: false,
-						...PAGE_TRANSITIONS.FADE_IN,
-					}}
-				/>
-				<Stack.Screen
-					name='Onboarding'
-					component={Onboarding}
 					options={{
 						headerShown: false,
 						gestureEnabled: false,

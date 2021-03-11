@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import { gql } from "@apollo/client";
 
 export const GET_WORK_BY_WORKID_USERID = gql`
 	query GetWorkByWorkIdUserId($workId: ID!, $userId: ID!) {
@@ -33,7 +33,6 @@ export const GET_WORK_BY_WORKID_USERID = gql`
 		}
 	}
 `;
-
 
 export const ADD_PRODUCT = gql`
 	mutation addProduct(
