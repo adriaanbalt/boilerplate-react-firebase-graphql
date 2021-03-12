@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "scheme": "greatflix",
+    "name": "Greatflix Stage",
+    "description": "Adriaan Balt",
+    "slug": "snack-greatflix",
+    "privacy": "unlisted",
+    "version": "1.2.3",
+    "orientation": "portrait",
+    "primaryColor": "#2e2c30",
+    "backgroundColor": "#936cf7",
+    "icon": "./assets/app-icon.png",
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_ERROR_RECOVERY",
+      "fallbackToCacheTimeout": 0
+    },
+    "loading": {
+      "icon": "./assets/app-icon.png",
+      "hideExponentText": true
+    },
+    "assetBundlePatterns": [
+      "assets/data/*"
+    ],
+    "web": {
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyDKRQLTcnoIsCLINWxZPijHVkmSveYMV9A",
+          "authDomain": "moviemood-6c59f.firebaseapp.com",
+          "databaseURL": "https://moviemood-6c59f.firebaseio.com",
+          "projectId": "moviemood-6c59f",
+          "storageBucket": "moviemood-6c59f.appspot.com",
+          "messagingSenderId": "697965888360",
+          "appId": "1:697965888360:web:5b199d71fb299981394cdd",
+          "measurementId": "G-86EPW9GJJY"
+        }
+      }
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.balt.greatflix.stage",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "FacebookUrlSchemeSuffix": "greatflix"
+      }
+    },
+    "facebookScheme": "fb221284545785999greatflix",
+    "facebookAppId": "221284545785999",
+    "facebookDisplayName": "Greatflix",
+    "platforms": [
+      "ios"
+    ],
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyDKRQLTcnoIsCLINWxZPijHVkmSveYMV9A",
+        "authDomain": "moviemood-6c59f.firebaseapp.com",
+        "databaseURL": "https://moviemood-6c59f.firebaseio.com",
+        "projectId": "moviemood-6c59f",
+        "storageBucket": "moviemood-6c59f.appspot.com",
+        "messagingSenderId": "697965888360"
+      },
+      "facebook": {
+        "appId": "221284545785999"
+      },
+      "bugsnag": {
+        "apiKey": "2f3be06aa3f0c33ad01bcb75b6d4a25a"
+      }
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "@bugsnag/expo/hooks/post-publish.js",
+          "config": {}
+        }
+      ]
+    }
+  }
+}
