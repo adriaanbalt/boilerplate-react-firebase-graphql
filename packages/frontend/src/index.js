@@ -9,7 +9,7 @@ import { GRAPHQL_URL } from "./constants/graphql";
 import StripeConfig from "./constants/stripe";
 import { ProductsProvider } from "./contexts/ProductsContext";
 import "./index.scss";
-import App from "./App";
+import AppNavigator from "./navigator";
 
 const uploadLink = createUploadLink({
 	uri: GRAPHQL_URL, // Apollo Server is served from port 4000
@@ -37,7 +37,7 @@ const Main = () => {
 		<ApolloProvider client={client}>
 			{/* <Elements stripe={stripePromise}> */}
 			<ProductsProvider>
-				<App />
+				<AppNavigator />;
 			</ProductsProvider>
 			{/* </Elements> */}
 		</ApolloProvider>
