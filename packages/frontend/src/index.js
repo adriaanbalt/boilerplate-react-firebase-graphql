@@ -37,7 +37,6 @@ const Main = () => {
 		<ApolloProvider client={client}>
 			{/* <Elements stripe={stripePromise}> */}
 			<ProductsProvider>
-				<div>hi</div>
 				<App />
 			</ProductsProvider>
 			{/* </Elements> */}
