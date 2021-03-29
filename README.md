@@ -162,6 +162,33 @@ root
 }
 ```
 
+#### Get Expo to work with yarn workspaces (monorepo)
+
+```
+ // ~/workspace/packages/frontend/package.json
+    {
+      "name": "{project name}",
+      "main": "__generated__/AppEntry.js",
+      // ...
+    }
+```
+
+At project root directory
+
+```
+$ yarn workspace {project name} add expo-yarn-workspaces metro-config -D -W
+```
+
+Configure our Metro, so create a file metro.config.js at monorepo/packages/expo-app:
+
+```
+    // ~/workspace/packages/frontend/metro.config.js
+
+    const { createMetroConfiguration } = require('expo-yarn-workspaces');
+
+    module.exports = createMetroConfiguration(__dirname);
+```
+
 #### Test to make sure it's setup correctly
 
 `$ yarn workspaces info`
