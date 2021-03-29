@@ -9,15 +9,11 @@
     "orientation": "portrait",
     "primaryColor": "#000000",
     "backgroundColor": "#111111",
-    "icon": "./assets/app-icon.png",
+    "icon": "./public/assets/logo192.png",
     "updates": {
       "enabled": true,
       "checkAutomatically": "ON_ERROR_RECOVERY",
       "fallbackToCacheTimeout": 0
-    },
-    "loading": {
-      "icon": "./assets/app-icon.png",
-      "hideExponentText": true
     },
     "assetBundlePatterns": [
       "assets/data/*"

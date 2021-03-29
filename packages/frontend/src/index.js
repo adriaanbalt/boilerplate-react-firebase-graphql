@@ -9,7 +9,7 @@ import { GRAPHQL_URL } from "./constants/graphql";
 import StripeConfig from "./constants/stripe";
 import { ProductsProvider } from "./contexts/ProductsContext";
 import "./index.scss";
-import App from "App";
+import App from "./App";
 
 const uploadLink = createUploadLink({
 	uri: GRAPHQL_URL, // Apollo Server is served from port 4000
