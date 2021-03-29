@@ -1,6 +1,6 @@
 import { useMutation, gql } from "@apollo/client";
 
-export const ADD_PRODUCT = gql`
+const ADD_PRODUCT = gql`
 	mutation addProduct($userId: ID!, $title: String!, $description: String) {
 		response: addProduct(
 			userId: $userId
@@ -15,6 +15,6 @@ export const ADD_PRODUCT = gql`
 `;
 
 export default () => {
-	let [ADD_PRODUCT] = useMutation(ADD_PRODUCT);
-	return ADD_PRODUCT;
+	const [addProduct, { called, loading, data }] = useMutation(ADD_PRODUCT);
+	return [addProduct, { called, loading, data }];
 };

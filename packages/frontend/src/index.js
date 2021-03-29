@@ -2,7 +2,7 @@ import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
 // import bugsnag from "@bugsnag/expo";
 import registerServiceWorker from "./lib/serviceWorker";
 import { GRAPHQL_URL } from "./constants/graphql";
@@ -35,12 +35,12 @@ registerServiceWorker();
 const Main = () => {
 	return (
 		<ApolloProvider client={client}>
-			<Elements stripe={stripePromise}>
-				<ProductsProvider>
-					<div>hi</div>
-					<App />
-				</ProductsProvider>
-			</Elements>
+			{/* <Elements stripe={stripePromise}> */}
+			<ProductsProvider>
+				<div>hi</div>
+				<App />
+			</ProductsProvider>
+			{/* </Elements> */}
 		</ApolloProvider>
 	);
 };
