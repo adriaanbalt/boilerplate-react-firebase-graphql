@@ -14,6 +14,7 @@ module.exports = function (api) {
 						configs: "./src/configs",
 						contexts: "./src/contexts",
 						enums: "./src/enums",
+						hooks: "./src/hooks",
 					},
 				},
 			],

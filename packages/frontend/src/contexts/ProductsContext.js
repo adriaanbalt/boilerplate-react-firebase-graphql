@@ -1,16 +1,23 @@
 import React, { useContext } from "react";
-import useAddProduct from "../hooks/useAddProduct";
+import useGetProducts from "hooks/useGetProducts";
+import useAddProduct from "hooks/useAddProduct";
 
 const ProductsContext = React.createContext();
 
 const ProductsProvider = (props) => {
+	const doGetProducts = useGetProducts();
 	const doAddProduct = useAddProduct();
+	const getProducts = (userId) => {
+		console.log("getProducts!!");
+		// const { loading, error, data } = doGetProducts();
+		// return { loading, error, data };
+	};
 	const addProduct = (userId, title, description) => {
 		doAddProduct(
 			{
 				variables: { userId, title, description },
 			},
-			{ refetchQueries: [`getProductsByUserId`] },
+			{ refetchQueries: [`getProducts`] },
 		)
 			.then((_) => {
 				console.log("successfully added product");
@@ -25,6 +32,7 @@ const ProductsProvider = (props) => {
 	return (
 		<ProductsContext.Provider
 			value={{
+				getProducts: getProducts,
 				addProduct: addProduct,
 				removeProduct: removeProduct,
 			}}>
