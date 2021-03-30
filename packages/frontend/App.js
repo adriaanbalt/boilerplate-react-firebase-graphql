@@ -4,13 +4,11 @@ import { createUploadLink } from "apollo-upload-client";
 import { loadStripe } from "@stripe/stripe-js";
 // import { Elements } from "@stripe/react-stripe-js";
 // import bugsnag from "@bugsnag/expo";
-import registerServiceWorker from "./lib/serviceWorker";
-import { GRAPHQL_URL } from "./configs/graphql";
-import StripeConfig from "./configs/stripe";
-import { ProductsProvider } from "./contexts/ProductsContext";
-import AppNavigator from "./navigator";
-import Colors from "lib/Colors";
-import { View } from "react-native";
+import registerServiceWorker from "./src/lib/serviceWorker";
+import { GRAPHQL_URL } from "./src/configs/graphql";
+import StripeConfig from "./src/configs/stripe";
+import { ProductsProvider } from "./src/contexts/ProductsContext";
+import AppNavigator from "./src/navigator";
 
 const uploadLink = createUploadLink({
 	uri: GRAPHQL_URL, // Apollo Server is served from port 4000
