@@ -71,5 +71,5 @@ typings/
 # next.js build output
 .next
 
-packages/frontend/src/constants/*
+packages/frontend/src/configs/*
 packages/backend/src/serviceAccountKey.json
