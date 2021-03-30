@@ -1,16 +1,14 @@
-// mutations
-const updateUser = require("./domains/user/updateUser");
+// products
+const getProducts = require("./domains/product/getProducts");
 const addProduct = require("./domains/product/addProduct");
 
-// queries
-const getWorkByWorkIdUserId = require("./domains/product/getWorkByWorkIdUserId");
-const getCollection = require("./domains/collections/GetCollection");
+// user
 const getUser = require("./domains/user/getUser");
+const updateUser = require("./domains/user/updateUser");
 
 module.exports = {
 	Query: {
-		getWorkByWorkIdUserId,
-		getCollection,
+		getProducts,
 		getUser,
 	},
 	Mutation: {
