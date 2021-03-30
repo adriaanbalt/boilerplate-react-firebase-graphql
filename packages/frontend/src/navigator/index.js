@@ -4,8 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "../components/views/Home";
-import ProfileScreen from "../components/views/Profile";
+import HomeScreen from "components/views/Home";
+import ProfileScreen from "components/views/Profile";
 // import ProductDetailsScreen from "../components/views/ProductDetailsScreen";
 
 import PAGE_TRANSITIONS from "lib/PAGE_TRANSITIONS";
@@ -60,9 +60,8 @@ function Tabs() {
 		<Tab.Navigator
 			initialRouteName='Home'
 			tabBarOptions={{
-				showLabel: false,
-				activeTintColor: "#FFF",
-				inactiveTintColor: "#EEE",
+				activeTintColor: "#111",
+				inactiveTintColor: "#999",
 				style: {
 					bottom: 30,
 					justifyContent: "center",
@@ -72,7 +71,7 @@ function Tabs() {
 					borderRadius: 20,
 					position: "absolute",
 					borderTopColor: "transparent",
-					backgroundColor: "#111",
+					backgroundColor: "#eee",
 				},
 			}}>
 			<Tab.Screen name='Home' component={HomeStack} />
