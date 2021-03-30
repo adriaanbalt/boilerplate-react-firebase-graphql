@@ -1,6 +1,5 @@
-const { ApolloError, ValidationError } = require('apollo-server-express')
+const { ValidationError } = require("apollo-server-express");
 const admin = require("firebase-admin");
-const objectAssignDeep = require("object-assign-deep");
 module.exports = async (
 	property,
 	value,
@@ -23,7 +22,7 @@ module.exports = async (
 					const docId = doc.id;
 					const docData = doc.data();
 					// doc.data() is never undefined for query doc snapshots
-					results.push(objectAssignDeep({}, { id: docId }, docData));
+					results.push({ id: docId, ...docData });
 				});
 				return results;
 			} else {

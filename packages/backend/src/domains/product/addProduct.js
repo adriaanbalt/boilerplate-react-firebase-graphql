@@ -1,10 +1,9 @@
 const { ApolloError } = require("apollo-server-express");
 const admin = require("firebase-admin");
-const objectAssignDeep = require("object-assign-deep");
 const TRANSACTION_STATUS = require("../../enums/TRANSACTION_STATUS");
 module.exports = async (_, data) => {
 	try {
-		const newWork = objectAssignDeep({}, data, {
+		const newWork = {
 			createdDate: Date.now(),
 			updateDate: Date.now(),
 			// thumbnail: {
@@ -12,7 +11,7 @@ module.exports = async (_, data) => {
 			// 	title: data.title,
 			// },
 			offerOwnerId: null,
-		});
+		};
 		// add new WORK to the work collection
 		const newWorkID = await admin
 			.firestore()
@@ -64,7 +63,7 @@ module.exports = async (_, data) => {
 		// TODO generate DEED??
 		// TODO update blockchain??
 
-		return objectAssignDeep({}, { id: newWorkID }, data);
+		return { id: newWorkID, ...data };
 	} catch (error) {
 		throw new ApolloError(`Resolver mutation addProduct() ${error}`);
 	}

@@ -12,7 +12,7 @@ module.exports = (transactionId, updateData) => {
 		.catch((error) => {
 			console.error(
 				`[transactions collection] updateTransactionById() Error adding document: `,
-				error
+				error,
 			);
 		});
 };
