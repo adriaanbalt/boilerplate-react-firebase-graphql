@@ -9,11 +9,12 @@ import ProfileScreen from "components/views/Profile";
 // import ProductDetailsScreen from "../components/views/ProductDetailsScreen";
 
 import PAGE_TRANSITIONS from "lib/PAGE_TRANSITIONS";
+import Colors from "lib/Colors";
 
 const MyTheme = {
 	dark: false,
 	colors: {
-		// background: Variables.popColor,
+		background: Colors.background,
 	},
 };
 

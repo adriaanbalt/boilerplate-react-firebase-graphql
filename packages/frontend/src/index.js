@@ -8,8 +8,9 @@ import registerServiceWorker from "./lib/serviceWorker";
 import { GRAPHQL_URL } from "./configs/graphql";
 import StripeConfig from "./configs/stripe";
 import { ProductsProvider } from "./contexts/ProductsContext";
-import "./index.scss";
 import AppNavigator from "./navigator";
+import Colors from "lib/Colors";
+import { View } from "react-native";
 
 const uploadLink = createUploadLink({
 	uri: GRAPHQL_URL, // Apollo Server is served from port 4000
@@ -37,7 +38,7 @@ const Main = () => {
 		<ApolloProvider client={client}>
 			{/* <Elements stripe={stripePromise}> */}
 			<ProductsProvider>
-				<AppNavigator />;
+				<AppNavigator />
 			</ProductsProvider>
 			{/* </Elements> */}
 		</ApolloProvider>

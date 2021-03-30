@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./styles.module.scss";
 import Button from "components/shared/Button";
 
 export default (props) => {
